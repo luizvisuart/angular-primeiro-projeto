@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "treinamentoAngular": {
+    "treinamento-angular": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/treinamentoAngular",
+            "outputPath": "dist/treinamento-angular",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -58,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "treinamentoAngular:build"
+            "browserTarget": "treinamento-angular:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "treinamentoAngular:build:production"
+              "browserTarget": "treinamento-angular:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "treinamentoAngular:build"
+            "browserTarget": "treinamento-angular:build"
           }
         },
         "test": {
@@ -103,7 +104,7 @@
         }
       }
     },
-    "treinamentoAngular-e2e": {
+    "treinamento-angular-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -112,11 +113,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "treinamentoAngular:serve"
+            "devServerTarget": "treinamento-angular:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "treinamentoAngular:serve:production"
+              "devServerTarget": "treinamento-angular:serve:production"
             }
           }
         },
@@ -132,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "treinamentoAngular"
+  "defaultProject": "treinamento-angular"
 }
