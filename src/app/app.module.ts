@@ -9,6 +9,7 @@ import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-latera
 import { ResumoComponent } from './resumo/resumo.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-especialidade/consulta-por-especialidade.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-espec
     ConsultaPorEspecialidadeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
