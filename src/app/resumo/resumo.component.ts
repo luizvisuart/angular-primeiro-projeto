@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ResumoService } from './resumo.service';
 
 @Component({
@@ -6,17 +6,21 @@ import { ResumoService } from './resumo.service';
   templateUrl: './resumo.component.html',
   styleUrls: ['./resumo.component.css']
 })
-export class ResumoComponent implements OnInit {
+export class ResumoComponent implements OnInit, OnDestroy {
 
   resumo;
+  inscricao;
 
   constructor(private resumoService: ResumoService) {
   }
 
   ngOnInit() {
-    this.resumoService.getResumo().subscribe(resposta => {
-      return this.resumo = resposta;
-    });
+    this.inscricao = this.resumoService.getResumo()
+      .subscribe(resposta => this.resumo = resposta);
+  }
+
+  ngOnDestroy() {
+    this.inscricao.unsubscribe();
   }
 
 }
