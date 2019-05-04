@@ -10,13 +10,14 @@ export class ResumoComponent implements OnInit, OnDestroy {
 
   resumo;
   inscricao;
+  erro;
 
   constructor(private resumoService: ResumoService) {
   }
 
   ngOnInit() {
     this.inscricao = this.resumoService.getResumo()
-      .subscribe(resposta => this.resumo = resposta);
+      .subscribe(resposta => this.resumo = resposta, erro => this.erro = true);
   }
 
   ngOnDestroy() {
